@@ -46,6 +46,19 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function changeBackgroundImage() {
+  console.log("DHD", celsiusTemperature);
+  if (celsiusTemperature > 20) {
+    document.querySelector(
+      ".weather-app"
+    ).style.backgroundImage = `url("src\img\summer-weather.jpg")`;
+  } else {
+    document.querySelector(
+      ".weather-app"
+    ).style.backgroundImage = `url("src\img\winter-weather.jpg")`;
+  }
+}
+
 function search(city) {
   let apiKey = "28feed74ca8e6f8450fa975c80fe27e3";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -76,6 +89,8 @@ function displayCelsiusTemperature(event) {
 
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  changeBackgroundImage();
 }
 
 let celsiusTemperature = null;

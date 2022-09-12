@@ -44,6 +44,10 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  celsiusTemp = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  changeBackgroundImage();
 }
 
 function changeBackgroundImage() {
@@ -51,11 +55,11 @@ function changeBackgroundImage() {
   if (celsiusTemperature > 20) {
     document.querySelector(
       ".weather-app"
-    ).style.backgroundImage = `url("src\img\summer-weather.jpg")`;
+    ).style.backgroundImage = `url("src/img/sun.jpg")`;
   } else {
     document.querySelector(
       ".weather-app"
-    ).style.backgroundImage = `url("src\img\winter-weather.jpg")`;
+    ).style.backgroundImage = `url("src/img/rainy.jpg")`;
   }
 }
 
@@ -86,11 +90,9 @@ function displayCelsiusTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
-  changeBackgroundImage();
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;

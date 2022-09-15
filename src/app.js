@@ -105,6 +105,7 @@ function displayTemperature(response) {
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 
   getForecast(response.data.coord);
+  changeBackgroundImage();
 }
 
 function changeBackgroundImage() {

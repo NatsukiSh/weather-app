@@ -1,9 +1,9 @@
 body {
-  font-family: arial, sans-serif;
+  font-family: "Splash", cursive;
 }
 
 h1 {
-  color: black;
+  color: white;
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
@@ -19,7 +19,7 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-  color: black;
+  color: white;
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
@@ -51,7 +51,7 @@ li:first-letter {
 }
 
 .weather-temperature strong {
-  color: black;
+  color: white;
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
@@ -79,12 +79,12 @@ li:first-letter {
 
 .weather-forecast-date {
   font-size: 16px;
-  color: black;
+  color: white;
 }
 
 .weather-forecast-temperature-max {
   font-size: 13px;
-  color: black;
+  color: white;
 }
 
 .weather-forecast-temperature-min {
